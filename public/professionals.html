@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoneyWise for Professionals</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed top-0 w-full z-50" x-data="{ open: false }">
+    <div class="w-full px-6 md:px-10 py-4 flex justify-between items-center max-w-screen-2xl mx-auto">
+
+      <h1 class="text-xl font-bold text-indigo-600">MoneyWise</h1>
+      <div class="hidden md:flex space-x-4">
+        <a href="index.html" class="text-gray-600 hover:text-indigo-600">Home</a>
+        <a href="couples.html" class="text-gray-600 hover:text-indigo-600">For couples</a>
+        <a href="professionals.html" class="text-gray-600 hover:text-indigo-600">For Professionals</a>
+        <a href="pricing.html" class="text-gray-600 hover:text-indigo-600">Pricing</a>
+      </div>
+      <button @click="open = !open" class="md:hidden text-indigo-600 text-xl focus:outline-none">
+        ☰
+      </button>
+    </div>
+    <!-- Mobile Nav -->
+    <div x-show="open" class="md:hidden bg-white border-t">
+      <nav class="flex flex-col px-4 py-2 space-y-2">
+        <a href="index.html" class="text-gray-700 hover:text-indigo-600">Home</a>
+        <a href="couples.html" class="text-gray-700 hover:text-indigo-600">For couples</a>
+        <a href="professionals.html" class="text-gray-700 hover:text-indigo-600">For Professionals</a>
+        <a href="pricing.html" class="text-gray-700 hover:text-indigo-600">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-700">Empower Your Clients with Clarity</h2>
+      <p class="text-base md:text-lg max-w-3xl mx-auto mb-10">MoneyWise for Professionals helps financial advisors, coaches, and planners gain real-time access to their clients' financial data. Streamline communication, track goals, and support better financial decisions — all in one platform.</p>
+      <img src="images/Screenshot (139).png" alt="Advisors Illustration" class="mx-auto w-full md:w-1/2 rounded">
+    </div>
+  </section>
+
+  <!-- Tab Section -->
+  <section class="bg-gray-100 py-16" x-data="{ tab: 'advisors' }">
+    <div class="container mx-auto px-4">
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <button @click="tab = 'advisors'" :class="tab === 'advisors' ? 'bg-indigo-600 text-white' : 'bg-white'" class="px-4 py-2 rounded-full border">Financial Advisors</button>
+        <button @click="tab = 'coaches'" :class="tab === 'coaches' ? 'bg-indigo-600 text-white' : 'bg-white'" class="px-4 py-2 rounded-full border">Money Coaches</button>
+        <button @click="tab = 'tax'" :class="tab === 'tax' ? 'bg-indigo-600 text-white' : 'bg-white'" class="px-4 py-2 rounded-full border">Tax Professionals</button>
+        <button @click="tab = 'estate'" :class="tab === 'estate' ? 'bg-indigo-600 text-white' : 'bg-white'" class="px-4 py-2 rounded-full border">Estate Planning Attorneys</button>
+      </div>
+
+      <!-- Panels -->
+      <div class="transition-all duration-500 space-y-12">
+        
+        <!-- Advisors -->
+        <div x-show="tab === 'advisors'" x-transition class="flex flex-col md:flex-row gap-10 items-center">
+          <img src="images/Screenshot (133).png" class="w-full md:w-1/2 rounded shadow" alt="Advisors">
+          <div class="md:w-1/2 space-y-2">
+            <h3 class="text-2xl font-bold text-indigo-700">Tools for pros, of all kinds</h3>
+            <ul class="text-gray-700 list-disc list-inside">
+              <li>Get full view of your clients accounts.</li>
+              <li>Make recommendations based on actual habits and numbers.</li>
+              <li>Use real-time data to help clients course correct.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Coaches -->
+        <div x-show="tab === 'coaches'" x-transition class="flex flex-col md:flex-row gap-10 items-center">
+          <img src="images/Screenshot (136).png" class="w-full md:w-1/2 rounded shadow" alt="Coaches">
+          <div class="md:w-1/2 space-y-2">
+            <h3 class="text-2xl font-bold text-indigo-700">Help your clients see money differently</h3>
+            <ul class="text-gray-700 list-disc list-inside">
+              <li>See actual client spending instead of estimated spending</li>
+              <li>Categorize spending and create budgets that work in real life</li>
+              <li>Get client's fixed spending under control with the bills calendar</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tax Pros -->
+        <div x-show="tab === 'tax'" x-transition class="flex flex-col md:flex-row gap-10 items-center">
+          <img src="images/Screenshot (135).png" class="w-full md:w-1/2 rounded shadow" alt="Tax">
+          <div class="md:w-1/2 space-y-2">
+            <h3 class="text-2xl font-bold text-indigo-700">No more asking for receipts</h3>
+            <ul class="text-gray-700 list-disc list-inside">
+              <li>See actual client spending instead of estimated spending</li>
+              <li>Tag expenses that are tax deductible</li>
+              <li>Know how everything fits together when filing taxes</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Estate -->
+        <div x-show="tab === 'estate'" x-transition class="flex flex-col md:flex-row gap-10 items-center">
+          <img src="images/Screenshot (137).png" class="w-full md:w-1/2 rounded shadow" alt="Estate">
+          <div class="md:w-1/2 space-y-2">
+            <h3 class="text-2xl font-bold text-indigo-700">Estate planning made easier</h3>
+            <ul class="text-gray-700 list-disc list-inside">
+              <li>Quickly assess the size and complexity of any estate</li>
+              <li>See every account and update recommendations as clients’ needs change</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-indigo-600 text-white text-center">
+    <div class="container mx-auto px-4">
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">Start Using MoneyWise for Professionals</h3>
+      <p class="text-base md:text-lg mb-6">Improve your workflow and empower your clients to reach their financial goals.</p>
+      <a href="/signup.html" class="bg-white text-indigo-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition">Get Started as a Professional</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 border-t mt-10">
+    <p>&copy; 2025 MoneyWise. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
