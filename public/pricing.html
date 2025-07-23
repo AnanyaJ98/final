@@ -14,13 +14,13 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <!-- Header -->
+  
  <header class="bg-white shadow-md fixed top-0 w-full z-50" x-data="{ mobileMenu: false }">
   <div class="w-full px-6 md:px-10 py-4 flex justify-between items-center max-w-screen-2xl mx-auto">
 
     <h1 class="text-xl font-bold text-indigo-600">MoneyWise</h1>
 
-    <!-- Desktop Nav -->
+   
     <nav class="hidden md:flex space-x-6">
       <a href="index.html" class="text-gray-600 hover:text-indigo-600">Home</a>
       <a href="couples.html" class="text-gray-600 hover:text-indigo-600">For Couples</a>
@@ -28,18 +28,18 @@
       <a href="pricing.html" class="text-gray-600 hover:text-indigo-600">Pricing</a>
     </nav>
 
-    <!-- Hamburger -->
+  
     <button @click="mobileMenu = !mobileMenu" class="md:hidden focus:outline-none">
       <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <!-- Hamburger -->
+       
         <path :class="{'hidden': mobileMenu, 'inline-flex': !mobileMenu }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        <!-- Cross -->
+        
         <path :class="{'inline-flex': mobileMenu, 'hidden': !mobileMenu }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
   </div>
 
-  <!-- Mobile Nav -->
+  
   <nav x-show="mobileMenu" x-transition class="md:hidden px-4 pb-4">
     <a href="index.html" class="block py-2 text-gray-600 hover:text-indigo-600">Home</a>
     <a href="couples.html" class="block py-2 text-gray-600 hover:text-indigo-600">For Couples</a>
@@ -49,12 +49,12 @@
 </header>
 
 
-  <!-- Hero + Toggle -->
+
   <section class="bg-white pt-28 pb-16 text-center px-4 bg-cover bg-center text-black-500" style="background-image: url('images/money1.jpg');">
     <h1 class="text-3xl md:text-4xl font-extrabold mb-6 text-black-700">One Simple Plan. All Features Included.</h1>
     <p class="text-base md:text-lg mb-6 max-w-2xl mx-auto text-black-600">Everything you need to manage your money wisely—budgets, goals, and real-time syncing.</p>
 
-    <!-- Toggle -->
+    
     <div x-data="{ yearly: false }" class="bg-white bg-opacity-90 rounded-lg p-6 shadow-md max-w-md mx-auto text-center">
       <div class="mb-6 flex justify-center items-center gap-4">
         <span :class="!yearly ? 'text-indigo-700 font-semibold' : 'text-gray-500'">Monthly</span>
@@ -67,13 +67,13 @@
         <span :class="yearly ? 'text-indigo-700 font-semibold' : 'text-gray-500'">Yearly</span>
       </div>
 
-      <!-- Price -->
+     
       <div class="inline-flex items-baseline space-x-2 mb-6">
         <span class="text-4xl font-extrabold text-indigo-700" x-text="yearly ? '$8.33' : '$14.99'"></span>
         <span class="text-black-600 font-bold" x-text="yearly ? '/mo billed yearly' : '/mo billed monthly'"></span>
       </div>
 
-      <!-- CTA Button -->
+      
       <button onclick="window.location.href='/signup.html'" id="checkout-button" class="bg-indigo-600 text-white px-6 py-3 rounded-md text-base font-semibold hover:bg-indigo-700 transition">
         <span x-text="yearly ? 'Start 7-day Free Trial - $99/year' : 'Start 7-day Free Trial - $14.99/month'"></span>
       </button>
@@ -81,7 +81,7 @@
     </div>
   </section>
 
-  <!-- Why Pay -->
+
   <section class="bg-gray-50 py-16 px-4">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center text-black-700 mb-12">Why pay for a personal finance app?</h2>
@@ -106,7 +106,7 @@
     </div>
   </section>
 
-  <!-- FAQs -->
+
   <section class="max-w-2xl mx-auto my-10 px-4" x-data="{ selected: null }">
     <h2 class="text-2xl font-bold mb-6 text-center text-indigo-600">Find Your Answers...</h2>
     <template x-for="(faq, index) in [
@@ -131,7 +131,7 @@
     </template>
   </section>
 
-  <!-- Footer -->
+  <
   <footer class="bg-indigo-50 text-center py-6 border-t mt-10">
     <p>&copy; 2025 MoneyWise. All rights reserved.</p>
   </footer>
