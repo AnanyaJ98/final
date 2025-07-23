@@ -10,13 +10,13 @@
 </head>
 <body class="bg-gray-50 text-gray-800 pt-20">
 
-  <!-- Header -->
+  
  
 <header class="bg-white shadow-md fixed top-0 w-full z-50" x-data="{ open: false }">
   <div class="w-full px-6 md:px-10 py-4 flex justify-between items-center max-w-screen-2xl mx-auto">
     <h1 class="text-xl font-bold text-indigo-600">MoneyWise</h1>
 
-    <!-- Desktop Navigation -->
+  
     <div class="hidden md:flex space-x-4 items-center">
       <a href="#features" class="text-gray-600 hover:text-indigo-600">Features</a>
       <a href="couples.html" class="text-gray-600 hover:text-indigo-600">For couples</a>
@@ -26,14 +26,14 @@
       <a href="#signup" class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md">Get Started</a>
     </div>
 
-    <!-- Hamburger Toggle -->
+
     <button @click="open = !open" class="md:hidden text-2xl text-indigo-600 focus:outline-none">
-      <span x-show="!open">&#9776;</span> <!-- ☰ icon -->
-      <span x-show="open">&#10005;</span> <!-- ✖ icon -->
+      <span x-show="!open">&#9776;</span> 
+      <span x-show="open">&#10005;</span> 
     </button>
   </div>
 
-  <!-- Mobile Nav -->
+  
   <div x-show="open" @click.away="open = false" x-transition class="md:hidden bg-white border-t">
     <nav class="flex flex-col items-start px-4 py-2 space-y-2">
       <a href="#features" class="text-gray-700 hover:text-indigo-600" @click="open = false">Features</a>
@@ -46,7 +46,7 @@
   </div>
 </header>
 
-  <!-- Hero -->
+  
   <section class="bg-indigo-50 pt-28 pb-20 bg-cover bg-center" style="background-image: url('images/money1.jpg');">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Take Control of Your Money</h2>
@@ -55,7 +55,7 @@
     </div>
   </section>
 
-  <!-- Features -->
+
   <section id="features" class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
@@ -96,7 +96,7 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
+ 
   <section id="testimonials" class="bg-gray-100 py-16">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
@@ -123,7 +123,7 @@
     </div>
   </section>
 
-  <!-- Call to Action -->
+
   <section id="signup" class="py-20 bg-indigo-600 text-white text-center">
     <div class="container mx-auto px-4">
       <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to start saving?</h3>
@@ -132,7 +132,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+ 
   <footer class="bg-white text-center py-6 border-t mt-10">
     <p>&copy; 2025 MoneyWise. All rights reserved.</p>
   </footer>
