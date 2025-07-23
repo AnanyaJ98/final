@@ -6,32 +6,29 @@ const bcrypt = require('bcryptjs');
 
 const User = require('../models/User');
 const crypto = require('crypto');
-const transporter = require('../utils/mailer'); // ✅ Import from mailer.js
+const transporter = require('../utils/mailer'); 
 
-// ✅ Signup Route
 router.post('/signup', async (req, res) => {
   const { name, email, password } = req.body;
 
-  // Basic validations
+ 
   if (!name || !email || !password) {
     return res.status(400).json({ msg: 'All fields are required' });
   }
 
-  // Check if user already exists
+  
   const existing = await User.findOne({ email });
   if (existing) return res.status(400).json({ msg: 'Email already exists' });
 
-  // Create verification token
   const token = crypto.randomBytes(32).toString('hex');
 
-  // Save user to DB
-  // const newUser = new User({ name, email, password, verificationToken: token });
-  const hashedPassword = await bcrypt.hash(password, 10); // 10 salt rounds is standard
+
+  const hashedPassword = await bcrypt.hash(password, 10); 
 const newUser = new User({ name, email, password: hashedPassword, verificationToken: token });
 
   await newUser.save();
 
-  // Send verification email
+  
   const verificationLink = `http://localhost:3000/api/auth/verify/${token}`;
   const mailOptions = {
     from: process.env.EMAIL_USER,
@@ -50,7 +47,7 @@ const newUser = new User({ name, email, password: hashedPassword, verificationTo
     res.status(500).json({ msg: 'Signup failed. Could not send verification email.' });
   }
 });
-// ✅ Email Verification Route
+
 router.get('/verify/:token', async (req, res) => {
   try {
     const { token } = req.params;
@@ -61,12 +58,12 @@ router.get('/verify/:token', async (req, res) => {
       return res.status(400).send('Invalid or expired verification link.');
     }
 
-    // Mark user as verified
+   
     user.isVerified = true;
-    user.verificationToken = undefined; // Clear token after use
+    user.verificationToken = undefined; 
     await user.save();
 
-    // Redirect to thank-you page (served from /public/thank-you.html)
+   
     res.redirect('/thank-you.html');
   } catch (err) {
     console.error('❌ Verification error:', err);
