@@ -9,14 +9,14 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- Header -->
+  
   
 <header class="bg-white shadow-md fixed top-0 w-full z-50" x-data="{ open: false }">
   <div class="w-full px-6 md:px-10 py-4 flex justify-between items-center max-w-screen-2xl mx-auto">
 
     <h1 class="text-xl font-bold text-indigo-600">MoneyWise</h1>
 
-    <!-- Desktop nav -->
+    
     <div class="hidden md:flex space-x-4">
       <a href="index.html" class="text-gray-600 hover:text-indigo-600">Home</a>
       <a href="couples.html" class="text-gray-600 hover:text-indigo-600">For Couples</a>
@@ -24,14 +24,14 @@
       <a href="pricing.html" class="text-gray-600 hover:text-indigo-600">Pricing</a>
     </div>
 
-    <!-- Mobile toggle button -->
+    
     <button @click="open = !open" class="md:hidden text-indigo-600 text-2xl focus:outline-none">
-      <span x-show="!open">&#9776;</span> <!-- Hamburger icon -->
-      <span x-show="open">&#10005;</span> <!-- Cross icon -->
+      <span x-show="!open">&#9776;</span> 
+      <span x-show="open">&#10005;</span> 
     </button>
   </div>
 
-  <!-- Mobile nav -->
+  
   <div x-show="open" @click.away="open = false" x-transition class="md:hidden bg-white border-t">
     <nav class="flex flex-col px-4 py-2 space-y-2">
       <a href="index.html" class="text-gray-700 hover:text-indigo-600" @click="open = false">Home</a>
@@ -43,7 +43,6 @@
 </header>
 
 
-  <!-- Hero Section -->
   <section class="pt-28 pb-20 bg-white">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-700">Build a Financial Future Together</h2>
@@ -52,14 +51,14 @@
     </div>
   </section>
 
-  <!-- Benefits Section -->
+ 
   <section class="bg-gray-100 py-16">
   <div class="container mx-auto px-4">
     <h3 class="text-3xl font-extrabold text-center mb-10">How Couples Benefit</h3>
 
     <div class="flex flex-col lg:flex-row justify-between items-stretch gap-10 text-center">
       
-      <!-- Card 1 -->
+    
       <div class="flex-1 bg-white p-4 rounded-lg shadow-md">
         <img src="images/Screenshot (130).png" class="mx-auto mb-4 w-full max-w-xs h-auto rounded-lg" />
         <h4 class="text-xl font-extrabold mb-2 text-indigo-700">Entire household in single dashboard</h4>
@@ -70,7 +69,7 @@
         </ul>
       </div>
 
-      <!-- Card 2 -->
+   
       <div class="flex-1 bg-white p-4 rounded-lg shadow-md">
         <img src="images/Screenshot (131).png" class="mx-auto mb-4 w-full max-w-xs h-auto rounded-lg" />
         <h4 class="text-xl font-extrabold mb-2 text-indigo-700">Collaboration made easy</h4>
@@ -97,7 +96,7 @@
 </section>
 
 
-  <!-- CTA Section -->
+ 
   <section class="py-20 bg-indigo-600 text-white text-center">
     <div class="container mx-auto px-4">
       <h3 class="text-2xl md:text-3xl font-bold mb-4">Start Managing Money Together</h3>
@@ -106,7 +105,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+ 
   <footer class="bg-white text-center py-6 border-t mt-10">
     <p>&copy; 2025 MoneyWise. All rights reserved.</p>
   </footer>
