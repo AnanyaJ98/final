@@ -49,5 +49,5 @@ MoneyWise is a modern, responsive SaaS landing page that includes a secure user 
 
 ##### Live demo
 This link shows the landing pages and signup UI (no backend functionality):
-[Open the Live Demo](https://ananyaj98.github.io/final/)
+[https://ananyaj98.github.io/final/](https://ananyaj98.github.io/final/)
 
